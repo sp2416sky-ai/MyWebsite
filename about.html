@@ -46,33 +46,6 @@
             margin: 60px 0;
         }
         
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        
-        .skill-item {
-            background: #2a2a2a;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid #333;
-        }
-        
-        .skill-item:hover {
-            transform: translateY(-5px);
-            border-color: #25D366;
-        }
-        
-        .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: #25D366;
-        }
-        
         .timeline {
             margin: 60px 0;
         }
@@ -99,7 +72,7 @@
                 <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <a href="https://wa.me/9958242630" class="whatsapp-nav-btn">WhatsApp</a>
+            <a href="https://wa.me/919958242630" class="whatsapp-nav-btn">WhatsApp</a>
         </div>
     </nav>
 
@@ -120,29 +93,81 @@
             </div>
         </div>
 
-        <!-- SKILLS SECTION -->
+        <!-- SKILLS SECTION WITH PROGRESS BARS -->
         <section class="skills-section">
-            <h2 class="page-title">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon">🖥️</div>
-                    <h3>Frontend Development</h3>
-                    <p>HTML5, CSS3, JavaScript, React, Vue.js</p>
+            <h2 class="page-title">My Technical Skills</h2>
+            
+            <div class="skills-grid-progress">
+                <!-- SKILL 1 -->
+                <div class="skill-item-progress">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML/CSS</span>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 95%"></div>
+                    </div>
+                    <p class="skill-tech">HTML5, CSS3, SASS, Bootstrap</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">⚙️</div>
-                    <h3>Backend Development</h3>
-                    <p>Node.js, Python, PHP, MySQL, MongoDB</p>
+                
+                <!-- SKILL 2 -->
+                <div class="skill-item-progress">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 85%"></div>
+                    </div>
+                    <p class="skill-tech">ES6+, React, Vue.js, jQuery</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">📱</div>
-                    <h3>Mobile Development</h3>
-                    <p>React Native, Flutter, Progressive Web Apps</p>
+                
+                <!-- SKILL 3 -->
+                <div class="skill-item-progress">
+                    <div class="skill-header">
+                        <span class="skill-name">React</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%"></div>
+                    </div>
+                    <p class="skill-tech">React Hooks, Redux, Next.js</p>
                 </div>
-                <div class="skill-item">
-                    <div class="skill-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Adobe XD, Wireframing, Prototyping</p>
+                
+                <!-- SKILL 4 -->
+                <div class="skill-item-progress">
+                    <div class="skill-header">
+                        <span class="skill-name">Node.js</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <p class="skill-tech">Express.js, REST APIs, MongoDB</p>
+                </div>
+                
+                <!-- SKILL 5 -->
+                <div class="skill-item-progress">
+                    <div class="skill-header">
+                        <span class="skill-name">Python</span>
+                        <span class="skill-percent">70%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 70%"></div>
+                    </div>
+                    <p class="skill-tech">Django, Flask, Data Analysis</p>
+                </div>
+                
+                <!-- SKILL 6 -->
+                <div class="skill-item-progress">
+                    <div class="skill-header">
+                        <span class="skill-name">UI/UX Design</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <p class="skill-tech">Figma, Adobe XD, Wireframing</p>
                 </div>
             </div>
         </section>
@@ -176,5 +201,26 @@
             <a href="contact.html" style="color: #25D366; margin: 0 10px;">Contact</a>
         </p>
     </footer>
+
+    <!-- PROGRESS BARS ANIMATION SCRIPT -->
+    <script>
+        // Progress bars animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            // Start animation after a small delay
+            setTimeout(() => {
+                progressBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    
+                    // Animate to full width
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 300);
+                });
+            }, 500);
+        });
+    </script>
 </body>
 </html>
